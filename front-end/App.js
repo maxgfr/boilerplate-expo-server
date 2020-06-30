@@ -31,7 +31,7 @@ export default function App() {
   _onCreateCustomer = () => {
     AdyenConnector.getInstance().sendToServer("createAccount", {
       firstName: 'Maxime',
-      lastName: 'Gfr'
+      lastName: 'Gfr',
     }).then((res) => {
       dispatch({type: 'SET_COUNT', value: res})
     }).catch((err) => {
