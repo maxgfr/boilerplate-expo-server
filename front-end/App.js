@@ -32,6 +32,8 @@ export default function App() {
     AdyenConnector.getInstance().sendToServer("createAccount", {
       firstName: 'Maxime',
       lastName: 'Gfr',
+      email: 'contact@sisilafamille.fr',
+      country: 'FR'
     }).then((res) => {
       dispatch({type: 'SET_COUNT', value: res})
     }).catch((err) => {
