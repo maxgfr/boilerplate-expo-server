@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import JSONTree from 'react-native-json-tree';
-import AdyenConnector from './lib/adyen';
+import ServerConnector from './lib/server';
 
 const initialState = {
   create_account: {}
@@ -29,7 +29,7 @@ export default function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   _onCreateCustomer = () => {
-    AdyenConnector.getInstance().sendToServer("createAccount", {
+    ServerConnector.getInstance().sendToServer("createAccount", {
       firstName: 'Maxime',
       lastName: 'Gfr',
       email: 'contact@sisilafamille.fr',

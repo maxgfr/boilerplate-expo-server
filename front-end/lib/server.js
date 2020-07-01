@@ -1,15 +1,15 @@
 const BASE_URL="http://localhost:3000/";
 
-export default class AdyenConnector {
+export default class ServerConnector {
 
     static myInstance = null;
 
     /**
-    * @returns {AdyenConnector}
+    * @returns {ServerConnector}
     */
     static getInstance() {
-        if (AdyenConnector.myInstance == null) {
-            AdyenConnector.myInstance = new AdyenConnector();
+        if (ServerConnector.myInstance == null) {
+            ServerConnector.myInstance = new ServerConnector();
         }
         return this.myInstance;
     }
