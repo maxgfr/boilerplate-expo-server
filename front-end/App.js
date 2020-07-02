@@ -9,15 +9,15 @@ import JSONTree from 'react-native-json-tree';
 import ServerConnector from './lib/server';
 
 const initialState = {
-  create_account: {}
+  json: {}
 };
 
 function reducer(state, action) {
   switch (action.type) {
-    case 'SET_COUNT':
+    case 'SET_JSON':
       return {
         ...state,
-        create_account: action.value
+        json: action.value
       };
     default:
       throw new Error();
@@ -35,7 +35,7 @@ export default function App() {
       email: 'contact@sisilafamille.fr',
       country: 'FR'
     }).then((res) => {
-      dispatch({type: 'SET_COUNT', value: res})
+      dispatch({type: 'SET_JSON', value: res})
     }).catch((err) => {
       console.log(err);
     })
@@ -45,7 +45,7 @@ export default function App() {
     <ScrollView contentContainerStyle={{ flexGrow: 1, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center' }}>
       <StatusBar style="auto" />
       <Button onPress={_onCreateCustomer} title="Create customer"/>
-      <JSONTree data={state.create_account} />
+      <JSONTree data={state.json} />
     </ScrollView>
   );
 }
